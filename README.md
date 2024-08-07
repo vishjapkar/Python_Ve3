@@ -15,5 +15,5 @@ This is a Django-based web application that allows users to upload CSV files, pe
     ```
 4. Open your web browser and go to `http://127.0.0.1:8000/myapp/upload/` to use the application.
 
-5  added csv file into zip file for testing the application 
-6 unzip the csv file file name is walmart data.csv and  clean data.csv
+5.  added csv file into zip file for testing the application 
+6. unzip the csv file file name is walmart data.csv and  clean data.csv
