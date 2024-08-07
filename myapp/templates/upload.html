@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Form</title>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .container {
+            width: 90%; /* Increased width */
+            max-width: 800px; /* Increased max-width */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 60px 30px; /* Increased padding */
+            box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Increased box shadow for more depth */
+            border-radius: 8px;
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 40px; /* Increased bottom margin for more space */
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Ensure form takes up full height of the container */
+        }
+        
+        form p {
+            margin: 10px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px; /* Increased padding */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: auto; /* Pushes the button to the bottom of the form */
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Form</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>
